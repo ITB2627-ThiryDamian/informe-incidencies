@@ -1,48 +1,74 @@
 <!doctype html>
-<html lang="es">
+<html lang="ca">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Informe estadístico de incidencias de equipamientos informáticos y audiovisuales.">
-  <title>Informe de incidencias | Equipamientos</title>
+  <meta name="description" content="Informe estadístic de les incidències d'equipament informàtic i audiovisual.">
+  <title>Informe d'incidències | Resum estadístic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="hero">
-    <div class="wrap">
-      <p class="eyebrow">INFORME DE ANÁLISIS</p>
-      <h1>Incidencias de equipamientos informáticos y audiovisuales</h1>
-      <p class="subtitle">Resumen estadístico de las incidencias registradas en la organización.</p>
-      <span class="privacy">Datos agregados · Sin información personal</span>
+    <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+    <div class="hero-inner">
+      <div class="topline"><span class="eyebrow">INFORME DE DADES</span><span class="privacy"><span class="privacy-dot"></span>Dades agregades · Sense informació personal</span></div>
+      <div class="hero-copy">
+        <div class="hero-icon">✳</div>
+        <p class="kicker">GESTIÓ D'EQUIPAMENTS</p>
+        <h1>Incidències informàtiques<br><span>i audiovisuals</span></h1>
+        <p class="hero-sub">Una visió clara de les incidències registrades, els equips afectats i el seu estat de resolució.</p>
+        <a class="scroll-link" href="#resum">Explora l'informe <span>↓</span></a>
+      </div>
+      <div class="hero-stats">
+        <div><strong id="hero-total">4.164</strong><span>incidències analitzades</span></div>
+        <div><strong>9</strong><span>tipus d'equipament</span></div>
+        <div><strong>5</strong><span>tipus d'incidència</span></div>
+      </div>
     </div>
   </header>
-  <main class="wrap">
-    <section aria-labelledby="summary-title">
-      <div class="section-heading"><div><p class="eyebrow">VISTA GENERAL</p><h2 id="summary-title">Resumen de incidencias</h2></div></div>
-      <div class="kpis">
-        <article class="kpi"><span>Total de incidencias</span><strong id="total">—</strong><small>Registros analizados</small></article>
-        <article class="kpi"><span>Tipos de equipamiento</span><strong id="equipment-count">—</strong><small>Categorías diferentes</small></article>
-        <article class="kpi"><span>Tipos de incidencia</span><strong id="type-count">—</strong><small>Categorías diferentes</small></article>
-        <article class="kpi"><span>Incidencias resueltas</span><strong id="resolved">—</strong><small id="resolved-pct">—</small></article>
+
+  <main class="container" id="resum">
+    <section class="section">
+      <div class="section-heading"><div><p class="section-tag">01 / VISIÓ GENERAL</p><h2>Les dades, d'un cop d'ull</h2></div><p class="section-note">Resum dels registres analitzats</p></div>
+      <div class="metric-grid">
+        <article class="metric-card metric-primary"><div class="metric-top"><span>Total d'incidències</span><span class="metric-symbol">▦</span></div><strong id="total">4.164</strong><small>Registres analitzats</small><div class="metric-line"></div></article>
+        <article class="metric-card"><div class="metric-top"><span>Incidències resoltes</span><span class="metric-symbol green">✓</span></div><strong id="resolved">1.404</strong><small id="resolved-pct">33,7 % del total</small><div class="mini-track"><i id="resolved-track"></i></div></article>
+        <article class="metric-card"><div class="metric-top"><span>Prioritat alta o crítica</span><span class="metric-symbol orange">!</span></div><strong id="urgent">1.726</strong><small id="urgent-pct">41,4 % del total</small><div class="mini-track orange-track"><i id="urgent-track"></i></div></article>
+        <article class="metric-card"><div class="metric-top"><span>Ubicacions registrades</span><span class="metric-symbol purple">⌖</span></div><strong>2</strong><small>SysLab i Aula 207</small><div class="metric-line purple-line"></div></article>
       </div>
     </section>
-    <section>
-      <div class="section-heading"><div><p class="eyebrow">DISTRIBUCIÓN</p><h2>¿Qué incidencias se registraron?</h2></div></div>
-      <div class="charts">
-        <article class="panel"><h3>Por tipo de equipamiento</h3><canvas id="equipment" role="img" aria-label="Gráfico de incidencias por tipo de equipamiento"></canvas><div id="equipment-legend" class="legend"></div></article>
-        <article class="panel"><h3>Por tipo de incidencia</h3><canvas id="type" role="img" aria-label="Gráfico de incidencias por tipo"></canvas><div id="type-legend" class="legend"></div></article>
-        <article class="panel"><h3>Por nivel de prioridad</h3><canvas id="priority" role="img" aria-label="Gráfico de incidencias por prioridad"></canvas><div id="priority-legend" class="legend"></div></article>
-        <article class="panel"><h3>Por estado</h3><canvas id="status" role="img" aria-label="Gráfico de incidencias por estado"></canvas><div id="status-legend" class="legend"></div></article>
-        <article class="panel panel-wide"><h3>Por ubicación</h3><canvas id="location" role="img" aria-label="Gráfico de incidencias por ubicación"></canvas><div id="location-legend" class="legend"></div></article>
+
+    <section class="section">
+      <div class="section-heading"><div><p class="section-tag">02 / DISTRIBUCIÓ</p><h2>Què ha passat?</h2></div><p class="section-note">Nombre de registres per categoria</p></div>
+      <div class="chart-grid">
+        <article class="panel"><div class="panel-heading"><div><span class="panel-icon blue">▤</span><h3>Per tipus d'equipament</h3></div><span class="panel-unit">9 categories</span></div><div id="equipment-chart" class="bar-chart"></div></article>
+        <article class="panel"><div class="panel-heading"><div><span class="panel-icon coral">⚙</span><h3>Per tipus d'incidència</h3></div><span class="panel-unit">5 categories</span></div><div id="type-chart" class="bar-chart"></div></article>
       </div>
     </section>
-    <section class="conclusions">
-      <p class="eyebrow">LECTURA DE LOS DATOS</p><h2>Conclusiones principales</h2>
-      <ul id="conclusions"></ul>
+
+    <section class="section">
+      <div class="section-heading"><div><p class="section-tag">03 / SEGUIMENT</p><h2>Prioritat i estat</h2></div><p class="section-note">Com s'han classificat i gestionat les incidències</p></div>
+      <div class="chart-grid">
+        <article class="panel"><div class="panel-heading"><div><span class="panel-icon amber">⚑</span><h3>Per nivell de prioritat</h3></div></div><div id="priority-chart" class="bar-chart compact"></div><div class="panel-foot">La prioritat mitjana és la més habitual.</div></article>
+        <article class="panel"><div class="panel-heading"><div><span class="panel-icon green">◷</span><h3>Per estat de la incidència</h3></div></div><div id="status-chart" class="bar-chart compact"></div><div class="panel-foot">Una tercera part dels registres consten com a resolts.</div></article>
+      </div>
     </section>
-    <p class="note">Este informe presenta recuentos agrupados. No publica nombres, teléfonos, correos electrónicos, descripciones individuales ni identificadores personales.</p>
+
+    <section class="section">
+      <div class="section-heading"><div><p class="section-tag">04 / LOCALITZACIÓ</p><h2>On es concentren?</h2></div><p class="section-note">Distribució per espai</p></div>
+      <article class="panel location-panel"><div class="location-intro"><span class="panel-icon purple">⌖</span><div><h3>Incidències per ubicació</h3><p>Comparació dels dos espais registrats</p></div></div><div id="location-chart" class="bar-chart location-chart"></div></article>
+    </section>
+
+    <section class="section conclusions-section">
+      <div class="conclusion-heading"><div><p class="section-tag">05 / LECTURA DE LES DADES</p><h2>Conclusions principals</h2><p>Què ens expliquen els registres?</p></div><div class="conclusion-mark">✳</div></div>
+      <div class="insight-grid" id="insights"></div>
+    </section>
+    <div class="privacy-note"><span>盾</span><p>Aquest informe mostra únicament recomptes agrupats. No s'hi publiquen noms, telèfons, adreces electròniques, descripcions individuals ni identificadors personals.</p></div>
   </main>
-  <footer><div class="wrap">Proyecto de gestión de incidencias · Informe estadístico</div></footer>
+  <footer><div class="footer-inner"><span class="footer-brand">✳ Informe d'incidències</span><span>Projecte de gestió d'incidències · Resum estadístic</span><a href="#resum">Torna a l'inici ↑</a></div></footer>
   <script src="stats.js"></script>
   <script src="script.js"></script>
 </body>
