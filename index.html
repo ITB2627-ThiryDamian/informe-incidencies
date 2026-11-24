@@ -1,57 +1,49 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informe de incidencias informáticas</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Informe estadístico de incidencias de equipamientos informáticos y audiovisuales.">
+  <title>Informe de incidencias | Equipamientos</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-    <h1>Informe de incidencias informáticas</h1>
-    <p>Análisis de las incidencias registradas en la organización</p>
-</header>
-
-<main>
-    <section class="resumen">
-        <h2>Resumen general</h2>
-        <div class="tarjetas">
-            <article class="tarjeta">
-                <h3>Total de incidencias</h3>
-                <p id="total">4000</p>
-            </article>
-            <article class="tarjeta">
-                <h3>Prioridad alta</h3>
-                <p id="alta">-</p>
-            </article>
-            <article class="tarjeta">
-                <h3>Incidencias resueltas</h3>
-                <p id="resueltas">-</p>
-            </article>
-        </div>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">INFORME DE ANÁLISIS</p>
+      <h1>Incidencias de equipamientos informáticos y audiovisuales</h1>
+      <p class="subtitle">Resumen estadístico de las incidencias registradas en la organización.</p>
+      <span class="privacy">Datos agregados · Sin información personal</span>
+    </div>
+  </header>
+  <main class="wrap">
+    <section aria-labelledby="summary-title">
+      <div class="section-heading"><div><p class="eyebrow">VISTA GENERAL</p><h2 id="summary-title">Resumen de incidencias</h2></div></div>
+      <div class="kpis">
+        <article class="kpi"><span>Total de incidencias</span><strong id="total">—</strong><small>Registros analizados</small></article>
+        <article class="kpi"><span>Tipos de equipamiento</span><strong id="equipment-count">—</strong><small>Categorías diferentes</small></article>
+        <article class="kpi"><span>Tipos de incidencia</span><strong id="type-count">—</strong><small>Categorías diferentes</small></article>
+        <article class="kpi"><span>Incidencias resueltas</span><strong id="resolved">—</strong><small id="resolved-pct">—</small></article>
+      </div>
     </section>
-
     <section>
-        <h2>Estadísticas</h2>
-        <p>A continuación se mostrarán los resultados del análisis.</p>
-        <div id="resultados"></div>
+      <div class="section-heading"><div><p class="eyebrow">DISTRIBUCIÓN</p><h2>¿Qué incidencias se registraron?</h2></div></div>
+      <div class="charts">
+        <article class="panel"><h3>Por tipo de equipamiento</h3><canvas id="equipment" role="img" aria-label="Gráfico de incidencias por tipo de equipamiento"></canvas><div id="equipment-legend" class="legend"></div></article>
+        <article class="panel"><h3>Por tipo de incidencia</h3><canvas id="type" role="img" aria-label="Gráfico de incidencias por tipo"></canvas><div id="type-legend" class="legend"></div></article>
+        <article class="panel"><h3>Por nivel de prioridad</h3><canvas id="priority" role="img" aria-label="Gráfico de incidencias por prioridad"></canvas><div id="priority-legend" class="legend"></div></article>
+        <article class="panel"><h3>Por estado</h3><canvas id="status" role="img" aria-label="Gráfico de incidencias por estado"></canvas><div id="status-legend" class="legend"></div></article>
+        <article class="panel panel-wide"><h3>Por ubicación</h3><canvas id="location" role="img" aria-label="Gráfico de incidencias por ubicación"></canvas><div id="location-legend" class="legend"></div></article>
+      </div>
     </section>
-
-    <section>
-        <h2>Conclusiones</h2>
-        <p>
-            Este informe permite analizar las incidencias informáticas,
-            identificar los problemas más frecuentes y conocer su estado.
-        </p>
+    <section class="conclusions">
+      <p class="eyebrow">LECTURA DE LOS DATOS</p><h2>Conclusiones principales</h2>
+      <ul id="conclusions"></ul>
     </section>
-</main>
-
-<footer>
-    <p>Proyecto de gestión de incidencias informáticas</p>
-</footer>
-
-<script src="script.js"></script>
+    <p class="note">Este informe presenta recuentos agrupados. No publica nombres, teléfonos, correos electrónicos, descripciones individuales ni identificadores personales.</p>
+  </main>
+  <footer><div class="wrap">Proyecto de gestión de incidencias · Informe estadístico</div></footer>
+  <script src="stats.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
